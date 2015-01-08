@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -17,6 +18,7 @@ import java.io.IOException;
 
 public class MainApp extends Application
 {
+    private static final String APP_ICON_FILENAME = "file:resources/images/address_book_32.png";
 
     private Stage primaryStage;
     private BorderPane rootLayout;
@@ -58,6 +60,7 @@ public class MainApp extends Application
     {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Address App");
+        this.primaryStage.getIcons().add(new Image(APP_ICON_FILENAME));
 
         initRootLayout();
 
@@ -95,7 +98,11 @@ public class MainApp extends Application
             loader.setLocation(getClass().getResource("view/PersonOverview.fxml"));
             AnchorPane personOverview = loader.load(); // Cast as (AnchorPane) prior to Java 7
 
-            // Set person overview into the center of the root layout
+            // Set the minimum dimensions of the window
+            primaryStage.setMinWidth(personOverview.getMinWidth());
+            primaryStage.setMinHeight(personOverview.getMinHeight());
+
+            // Set person overview into the Center of the pane
             rootLayout.setCenter(personOverview);
 
             // Give the controller access to the main app
@@ -125,8 +132,11 @@ public class MainApp extends Application
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Edit Person");
+            dialogStage.getIcons().add(new Image(APP_ICON_FILENAME));
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
+            dialogStage.setResizable(false);
+
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
