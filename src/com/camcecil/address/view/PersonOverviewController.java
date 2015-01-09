@@ -6,6 +6,7 @@ import com.camcecil.address.util.DateUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import org.controlsfx.dialog.Dialogs;
 
@@ -64,6 +65,17 @@ public class PersonOverviewController
         personTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showPersonDetails(newValue)
         );
+
+        // Sets a double click handler on row creation. Opens edit dialog on double click.
+        personTable.setRowFactory( tv -> {
+            TableRow<Person> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    handleEditPerson();
+                }
+            });
+            return row;
+        });
     }
 
     /**
