@@ -67,7 +67,7 @@ public class PersonOverviewController
         );
 
         // Sets a double click handler on row creation. Opens edit dialog on double click.
-        personTable.setRowFactory( tv -> {
+        personTable.setRowFactory(tv -> {
             TableRow<Person> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if (event.getClickCount() == 2 && (!row.isEmpty())) {
@@ -143,7 +143,9 @@ public class PersonOverviewController
         boolean okClicked = mainApp.showPersonEditDialog(tempPerson);
         if (okClicked) {
             mainApp.getPersonData().add(tempPerson);
-            // TODO: Select the newly added person in the Table List
+
+            // Select the newly added entry in the list.
+            personTable.getSelectionModel().selectLast();
         }
     }
 
