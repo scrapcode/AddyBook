@@ -111,4 +111,11 @@ public class RootLayoutController
     {
         System.exit(0);
     }
+
+    // Shows the Birthday Statistics window.
+    @FXML
+    private void handleBirthdayStatistics()
+    {
+        mainApp.showBirthdayStatistics();
+    }
 }

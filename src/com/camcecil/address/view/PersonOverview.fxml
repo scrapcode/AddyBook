@@ -2,10 +2,9 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<javafx.scene.layout.AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="290.0" minWidth="798.0" prefHeight="463.0" prefWidth="896.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.camcecil.address.view.PersonOverviewController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="290.0" minWidth="798.0" prefHeight="463.0" prefWidth="896.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.camcecil.address.view.PersonOverviewController">
    <children>
       <SplitPane dividerPositions="0.3823146944083225" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -73,4 +72,4 @@
         </items>
       </SplitPane>
    </children>
-</javafx.scene.layout.AnchorPane>
+</AnchorPane>
