@@ -4,11 +4,7 @@ import com.camcecil.address.MainApp;
 import com.camcecil.address.model.Person;
 import com.camcecil.address.util.DateUtil;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.TableView;
-import org.controlsfx.dialog.Dialogs;
+import javafx.scene.control.*;
 
 /**
  * @author Cam Cecil (github.com/scrapcode)
@@ -124,11 +120,11 @@ public class PersonOverviewController
         } else {
             // Nothing selected.
             // TODO: Use JavaFX Dialogs with the release of JDK 8u40!
-            Dialogs.create()
-                    .title("No Selection")
-                    .masthead("No Person Selected")
-                    .message("Please select a person in the table.")
-                    .showWarning();
+            Alert warning = new Alert(Alert.AlertType.WARNING);
+            warning.setTitle("No selection");
+            warning.setHeaderText("No person is selected.");
+            warning.setContentText("Please select a person to delete in the table.");
+            warning.showAndWait();
         }
     }
 
@@ -160,11 +156,11 @@ public class PersonOverviewController
             }
         } else {
             // Nothing selected
-            Dialogs.create()
-                    .title("No selection")
-                    .masthead("No person is selected.")
-                    .message("Please select a person to edit in the table.")
-                    .showWarning();
+            Alert warning = new Alert(Alert.AlertType.WARNING);
+            warning.setTitle("No selection");
+            warning.setHeaderText("No person is selected.");
+            warning.setContentText("Please select a person to edit in the table.");
+            warning.showAndWait();
         }
     }
 }

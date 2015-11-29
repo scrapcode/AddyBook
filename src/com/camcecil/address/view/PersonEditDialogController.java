@@ -5,7 +5,7 @@ import com.camcecil.address.util.DateUtil;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.controlsfx.dialog.Dialogs;
+import javafx.scene.control.Alert;
 
 import java.util.Date;
 
@@ -155,11 +155,11 @@ public class PersonEditDialogController
             return true;
         } else {
             // Show the error message
-            Dialogs.create()
-                    .title("Invalid Fields")
-                    .masthead("Please correct the invalid fields:")
-                    .message(errorMessage)
-                    .showError();
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("No selection");
+            error.setHeaderText("No person is selected.");
+            error.setContentText(errorMessage);
+            error.showAndWait();
             return false;
         }
     }

@@ -2,8 +2,8 @@ package com.camcecil.address.view;
 
 import com.camcecil.address.MainApp;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
-import org.controlsfx.dialog.Dialogs;
 
 import java.io.File;
 
@@ -98,11 +98,11 @@ public class RootLayoutController
     @FXML
     private void handleAbout()
     {
-        Dialogs.create()
-                .title("AddressApp")
-                .masthead("About")
-                .message("Tutorial Student: Cam Cecil\n\nTutorial Author: Marco Jakob\\nWebsite: http://code.makery.ch")
-                .showInformation();
+        Alert error = new Alert(Alert.AlertType.INFORMATION);
+        error.setTitle("About");
+        error.setHeaderText("About:");
+        error.setContentText("Tutorial Student: Cam Cecil\n\nTutorial Author: Marco Jakob\\nWebsite: http://code.makery.ch");
+        error.showAndWait();
     }
 
     // Closes the application
