@@ -5,7 +5,8 @@ This is the product of following the 7 part [JavaFX Tutorial by code.makery](htt
 
 The tutorial uses Eclipse, but I followed along using [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 
-### Things I added:
+### Things I've added from the original:
+- Native Alert dialogs (removed controlsfx)
 - Double click list items to edit.
 - Responsive layout
 - isFieldEmpty() Helper method to keep things a little more DRY
